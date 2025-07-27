@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.VideoEditorActivity">
+
+    <!-- Video Preview Section -->
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/playerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/surface"
+        app:layout_constraintBottom_toTopOf="@+id/timelineContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:use_controller="true"
+        app:show_buffering="when_playing" />
+
+    <!-- Import/Record Buttons (shown when no video loaded) -->
+    <LinearLayout
+        android:id="@+id/importButtonsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/playerView"
+        app:layout_constraintEnd_toEndOf="@+id/playerView"
+        app:layout_constraintStart_toStartOf="@+id/playerView"
+        app:layout_constraintTop_toTopOf="@+id/playerView">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnImportVideo"
+            style="@style/ButtonPrimary"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/import_video"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRecordVideo"
+            style="@style/ButtonSecondary"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/record_video"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- Timeline Container -->
+    <LinearLayout
+        android:id="@+id/timelineContainer"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/timeline_background"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/controlsScrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/timelineRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            tools:listitem="@layout/item_timeline_clip" />
+
+    </LinearLayout>
+
+    <!-- Controls ScrollView -->
+    <HorizontalScrollView
+        android:id="@+id/controlsScrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/editingPanelContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCut"
+                style="@style/ButtonIcon"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/cut_video"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSplit"
+                style="@style/ButtonIcon"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/split_video"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCrop"
+                style="@style/ButtonIcon"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/crop_video"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSpeed"
+                style="@style/ButtonIcon"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/speed_adjustment"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRotate"
+                style="@style/ButtonIcon"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/rotate_video"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFilters"
+                style="@style/ButtonIcon"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/apply_filters"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnText"
+                style="@style/ButtonIcon"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/add_text"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAudio"
+                style="@style/ButtonIcon"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/add_audio"
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExport"
+                style="@style/ButtonPrimary"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:text="@string/export_video"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <!-- Editing Panel Container -->
+    <FrameLayout
+        android:id="@+id/editingPanelContainer"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/surface_variant"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Progress Overlay -->
+    <LinearLayout
+        android:id="@+id/progressOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/overlay_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/progressIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:indicatorColor="@color/accent" />
+
+        <TextView
+            android:id="@+id/progressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/processing"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
