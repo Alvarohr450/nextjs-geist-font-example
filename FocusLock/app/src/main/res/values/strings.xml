@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">FocusLock</string>
+    
+    <!-- Main Activity -->
+    <string name="import_video">Import Video</string>
+    <string name="record_video">Record Video</string>
+    <string name="cut_video">Cut</string>
+    <string name="split_video">Split</string>
+    <string name="crop_video">Crop</string>
+    <string name="speed_adjustment">Speed</string>
+    <string name="rotate_video">Rotate</string>
+    <string name="flip_video">Flip</string>
+    <string name="apply_filters">Filters</string>
+    <string name="add_text">Add Text</string>
+    <string name="add_stickers">Stickers</string>
+    <string name="add_audio">Audio</string>
+    <string name="export_video">Export</string>
+    
+    <!-- Filter names -->
+    <string name="filter_vintage">Vintage</string>
+    <string name="filter_dramatic">Dramatic</string>
+    <string name="filter_bright">Bright</string>
+    <string name="filter_warm">Warm</string>
+    <string name="filter_cool">Cool</string>
+    <string name="filter_sepia">Sepia</string>
+    <string name="filter_black_white">Black &amp; White</string>
+    <string name="filter_vivid">Vivid</string>
+    <string name="filter_soft">Soft</string>
+    <string name="filter_none">No Filter</string>
+    
+    <!-- Audio -->
+    <string name="background_music">Background Music</string>
+    <string name="sound_effects">Sound Effects</string>
+    <string name="original_audio_volume">Original Audio</string>
+    <string name="background_music_volume">Music Volume</string>
+    <string name="sync_audio">Sync Audio</string>
+    
+    <!-- Text and Stickers -->
+    <string name="enter_text">Enter your text here</string>
+    <string name="text_size">Text Size</string>
+    <string name="text_color">Text Color</string>
+    <string name="font_style">Font Style</string>
+    <string name="text_animation">Animation</string>
+    
+    <!-- Export -->
+    <string name="resolution">Resolution</string>
+    <string name="aspect_ratio">Aspect Ratio</string>
+    <string name="quality">Quality</string>
+    <string name="export_progress">Exporting video...</string>
+    <string name="export_complete">Export completed successfully!</string>
+    <string name="export_failed">Export failed. Please try again.</string>
+    
+    <!-- Speed options -->
+    <string name="speed_0_1x">0.1x</string>
+    <string name="speed_0_25x">0.25x</string>
+    <string name="speed_0_5x">0.5x</string>
+    <string name="speed_1x">1x</string>
+    <string name="speed_1_5x">1.5x</string>
+    <string name="speed_2x">2x</string>
+    <string name="speed_3x">3x</string>
+    <string name="speed_5x">5x</string>
+    
+    <!-- Resolution options -->
+    <string name="resolution_720p">720p</string>
+    <string name="resolution_1080p">1080p</string>
+    <string name="resolution_4k">4K</string>
+    
+    <!-- Aspect ratio options -->
+    <string name="aspect_16_9">16:9</string>
+    <string name="aspect_9_16">9:16</string>
+    <string name="aspect_1_1">1:1</string>
+    
+    <!-- Error messages -->
+    <string name="error_no_video_selected">Please select a video first</string>
+    <string name="error_invalid_video">Invalid video file</string>
+    <string name="error_processing_failed">Video processing failed</string>
+    <string name="error_permission_denied">Permission denied. Please grant storage permission.</string>
+    <string name="error_camera_not_available">Camera not available</string>
+    <string name="error_export_failed">Export failed. Please check storage space.</string>
+    
+    <!-- General -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="apply">Apply</string>
+    <string name="reset">Reset</string>
+    <string name="preview">Preview</string>
+    <string name="processing">Processing...</string>
+    <string name="done">Done</string>
+    <string name="share">Share</string>
+    <string name="save">Save</string>
+    
+    <!-- Permissions -->
+    <string name="permission_storage_rationale">Storage permission is required to import and export videos</string>
+    <string name="permission_camera_rationale">Camera permission is required to record videos</string>
+</resources>
